@@ -76,7 +76,7 @@ def generate_anonymous(q, p, n, noise, GHZ_party, GHZ_3):
     fidelity_ghz = fidelity(
         [qubits[p['a0']], qubits[p['a1']], qubits[p['b0']], qubits[p['b1']]] + qubits[4:n*2],
         GHZ_party,
-        squared=False
+        squared=True
     )
     
     # Measure qubits from the first group
@@ -121,7 +121,7 @@ def generate_anonymous(q, p, n, noise, GHZ_party, GHZ_3):
     fidelity_anonymous = fidelity(
         [qubits[p['a1']], qubits[p['b0']], qubits[p['b1']]],
         GHZ_3,
-        squared=False
+        squared=True
     )
 
     # Compute the reduced density matrix of the relevant qubits
